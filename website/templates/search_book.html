@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+{% if searched %}
+    <h1>You searched for...</h1>
+    <br/>
+
+    <table class="table table-striped table-hover table-bordered border-primary">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Publish date</th>
+            <th scope="col">Available</th>
+            <th scope="col">ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            {% for book in books %}
+    
+                <tr>
+                    <td>{{book.title}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.publish_date}}</td>
+                    <td>{{book.in_stock}}</td>
+                    <td>{{book.id}}</td>
+                </tr>
+    
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+    <h1>You forgot to search for a book...</h1>
+    <br/>
+
+{% endif %}
+</center>
+
+{% endblock %}

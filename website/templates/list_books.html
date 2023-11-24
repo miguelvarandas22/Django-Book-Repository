@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Available books...</h1>
+<br/>
+
+<table class="table table-striped table-hover table-bordered border-primary">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publish date</th>
+        <th scope="col">Available</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      {% if books %}
+        {% for book in books %}
+
+            <tr>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.publish_date}}</td>
+                <td>{{book.in_stock}}</td>
+                <td><a href="{% url 'one_book' book.id %}"> {{book.id}} </a></td>
+            </tr>
+
+        {% endfor %}
+      {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

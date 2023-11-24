@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header">
+            <strong>Adding a book</strong>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            
+            <form method = "POST" action="{% url 'add_book' %}">
+                {% csrf_token %}
+            
+                {{ form.as_p }}
+            
+            <br/>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-dark">Add book</button>
+            </div>
+
+            </form>
+        </div>
+      </div>
+</div>
+
+{% endblock %}

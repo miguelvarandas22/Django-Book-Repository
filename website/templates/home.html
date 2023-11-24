@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+    <h1>Bem-vindo!</h1>
+    <br/>
+
+    <p style="font-size:22px;"> O seguinte website é um simples Repositório de Livros e no texto seguinte darei algumas instruções de como o utilizar:</p>
+
+    <ul style="font-size:22px;">
+        <dt><strong>Available books</strong></dt> <dl>Mostra todos os livros disponíveis para leitura.</dl>
+        <dt><strong>All books</strong></dt> <dl>Mostra todos os livros registados neste Repositório, incluindo os indisponíveis.</dl>
+        <dt><strong>Add a book</strong></dt> <dl>Serve para adicionar um novo livro ao Repositório.</dl>
+        <dt><strong>Outro</strong></dt> <dl> Na primeiras duas opções é possível editar ou eliminar livros clicando no ID de cada um.</dl>
+    </ul>
+
+    <br/>
+    <p style="font-size:18px; color: rgb(198, 0, 0)">O único ponto que ficou em falta foi apenas introduzir a data da publicação de cada livro e a sua ordenação por ordem cronológica.</p>
+</center>
+
+{% endblock %}
